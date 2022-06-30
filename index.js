@@ -11,15 +11,15 @@
  * 
  */
  function numOfOccurences(str){
-
+    
     if (typeof str !== "string"){
       return `str must be a string`
     } else if (str.length ===0){
       return `str must have atleast one element`
     }
-  let accumulator ={};
+    let accumulator ={};
     
-  for (let i = 0; i < str.length; i++){
+    for (let i = 0; i < str.length; i++){
     const letter = str[i].toLowerCase();
   
     if (!accumulator[letter]){
@@ -50,18 +50,18 @@
   
   function targetLetters(letters,target){
     // guard clause
-
+    // Make sure each value in letters is a number
     for (const key in letters) {
         if (letters[key] !== 'number'){
             return `one of the values is not a number`
         }
         }
-        
+    // make sure target is a number
     if (typeof target !== 'number'){
         return `Target must be a number`
     }
     
-    
+    //initialize accumulator
     let accumulator = []
   
     for (const key in letters) {
@@ -81,7 +81,7 @@
     return accumulator
   }
   
-  console.log(targetLetters(myLetters,3))
+//   console.log(targetLetters(myLetters,3))
   /**
    * getCartTotal()
    * -----------------
@@ -99,8 +99,27 @@
       getCartTotal(cart);
    *  //> "$30.00"
    */
-//   function myname (name){
-//     return `${name} is Shaik`
-//   }
+
+    function getCartTotal(products){
+    // 
+    let accumulator = 0
+
+    for (let i = 0; i < products.length; i++) {
+        const product = products[i];
+        
+        accumulator += product.priceInCents * product.quantity
+    }
+        accumulator /= 100
+
+        accumulator = accumulator.toFixed(2)
+        
+        return `$${accumulator}`
+    }
+    const cart = [
+        { name: "T-Shirt", priceInCents: 1200, quantity: 1 },
+        { name: "Socks", priceInCents: 900, quantity: 2 },
+      ];
+    console.log(getCartTotal(cart))
+
 
   
