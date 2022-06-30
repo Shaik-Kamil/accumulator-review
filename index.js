@@ -49,12 +49,33 @@
    const myLetters= numOfOccurences("AccabbabbcbcbB")
   
   function targetLetters(letters,target){
+    // guard clause
+
+    for (const key in letters) {
+        if (letters[key] !== 'number'){
+            return `one of the values is not a number`
+        }
+        }
+        
+    if (typeof target !== 'number'){
+        return `Target must be a number`
+    }
+    
     
     let accumulator = []
   
     for (const key in letters) {
-      console.log("Key:", key)
-      console.log("Value:", letters[key])
+    //   prints out each key
+    //   console.log("Key:", key)
+    //   prints out value for each key
+    //   console.log("Value:", letters[key])
+    let 
+
+    if ( letters[key] > target){
+        accumulator.push(key)
+    } else if (letters[key < target]){
+
+    }
     }
   
     return accumulator
@@ -78,3 +99,8 @@
       getCartTotal(cart);
    *  //> "$30.00"
    */
+//   function myname (name){
+//     return `${name} is Shaik`
+//   }
+
+  
